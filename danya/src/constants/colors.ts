@@ -1,15 +1,18 @@
 const colors = {
-    background: "#F6F8F5",
+    background: "#E3ECE4",
     surface: "#FFFFFF",
 
-    primary: "#216B43",
-    primaryLight: "#E4F1E7",
+    primary: "#111311",
+    primaryLight: "#D2E3D4",
 
-    text: "#17251C",
-    textSecondary: "#737D75",
+    text: "#111311",
+    textSecondary: "#526457",
 
-    border: "#E7EBE6",
-    muted: "#858D87",
+    border: "#D2DDD3",
+    muted: "#858B85",
+
+    accent: "#24543A",
+    accentLight: "#B8D9C0",
 
     danger: "#C0392B",
     success: "#287A4B",

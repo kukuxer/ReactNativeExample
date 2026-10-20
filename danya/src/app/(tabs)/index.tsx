@@ -11,6 +11,8 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import colors from "../../constants/colors";
+import styles from "../../styles/home.styles";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 
 
@@ -18,6 +20,7 @@ export default function HomeScreen() {
     // 2. Store what the user types into the journey form
     const [origin, setOrigin] = useState("My current location");
     const [destination, setDestination] = useState("");
+    const insets = useSafeAreaInsets();
 
     // 3. Open the journey results screen
     function findJourney() {
@@ -37,7 +40,10 @@ export default function HomeScreen() {
     return (
         <ScrollView
             style={styles.screen}
-            contentContainerStyle={styles.content}
+            contentContainerStyle={[
+                styles.content,
+                { paddingTop: insets.top + 5},
+            ]}
             keyboardShouldPersistTaps="handled"
             showsVerticalScrollIndicator={false}
         >
@@ -153,7 +159,7 @@ export default function HomeScreen() {
                         <Ionicons
                             name="ticket-outline"
                             size={25}
-                            color={colors.primary}
+                            color={colors.accent}
                         />
                     </View>
 
@@ -238,221 +244,4 @@ export default function HomeScreen() {
     );
 }
 
-// 4. All visual styling lives here
-const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        backgroundColor: colors.background,
-    },
 
-    content: {
-        paddingHorizontal: 22,
-        paddingTop: 28,
-        paddingBottom: 35,
-    },
-
-    header: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginBottom: 25,
-    },
-
-    eyebrow: {
-        color: colors.primary,
-        fontSize: 10,
-        fontWeight: "800",
-        letterSpacing: 1.8,
-    },
-
-    title: {
-        color: colors.text,
-        fontSize: 36,
-        fontWeight: "800",
-        marginTop: 9,
-    },
-
-    subtitle: {
-        color: colors.muted,
-        fontSize: 14,
-        marginTop: 5,
-    },
-
-    profileButton: {
-        width: 46,
-        height: 46,
-        borderRadius: 23,
-        backgroundColor: colors.surface,
-        borderWidth: 1,
-        borderColor: colors.border,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-
-    searchCard: {
-        backgroundColor: colors.surface,
-        padding: 18,
-        borderRadius: 20,
-        borderWidth: 1,
-        borderColor: colors.border,
-        marginBottom: 30,
-    },
-
-    sectionLabel: {
-        color: colors.primary,
-        fontSize: 11,
-        fontWeight: "800",
-        letterSpacing: 1.1,
-        marginBottom: 15,
-    },
-
-    inputRow: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 12,
-        minHeight: 45,
-    },
-
-    input: {
-        flex: 1,
-        minWidth: 0,
-        paddingVertical: 11,
-        color: colors.text,
-        fontSize: 14,
-    },
-
-    separatorRow: {
-        paddingLeft: 7,
-        paddingVertical: 3,
-    },
-
-    separator: {
-        height: 1,
-        backgroundColor: colors.border,
-    },
-
-    primaryButton: {
-        backgroundColor: colors.primary,
-        paddingVertical: 15,
-        paddingHorizontal: 16,
-        borderRadius: 12,
-        marginTop: 16,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 9,
-    },
-
-    primaryButtonText: {
-        color: colors.surface,
-        fontSize: 15,
-        fontWeight: "700",
-    },
-
-    sectionHeader: {
-        marginBottom: 15,
-    },
-
-    sectionTitle: {
-        color: colors.text,
-        fontSize: 21,
-        fontWeight: "800",
-    },
-
-    tilesRow: {
-        flexDirection: "row",
-        gap: 12,
-    },
-
-    tile: {
-        flex: 1,
-        minWidth: 0,
-        backgroundColor: colors.surface,
-        borderRadius: 17,
-        padding: 14,
-        borderWidth: 1,
-        borderColor: colors.border,
-    },
-
-    tileIcon: {
-        width: 47,
-        height: 47,
-        borderRadius: 14,
-        backgroundColor: colors.primaryLight,
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: 15,
-    },
-
-    tileTitle: {
-        color: colors.text,
-        fontSize: 16,
-        fontWeight: "800",
-    },
-
-    tileDescription: {
-        color: colors.muted,
-        fontSize: 12,
-        lineHeight: 18,
-        marginTop: 5,
-    },
-
-    tileFooter: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 5,
-        marginTop: 16,
-    },
-
-    tileLink: {
-        color: colors.primary,
-        fontSize: 11,
-        fontWeight: "700",
-    },
-
-    accountCard: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 12,
-        backgroundColor: colors.surface,
-        borderRadius: 17,
-        borderWidth: 1,
-        borderColor: colors.border,
-        padding: 15,
-        marginTop: 16,
-    },
-
-    accountIcon: {
-        width: 44,
-        height: 44,
-        borderRadius: 14,
-        backgroundColor: colors.primaryLight,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-
-    accountText: {
-        flex: 1,
-    },
-
-    accountTitle: {
-        color: colors.text,
-        fontSize: 15,
-        fontWeight: "800",
-    },
-
-    accountDescription: {
-        color: colors.muted,
-        fontSize: 12,
-        lineHeight: 18,
-        marginTop: 4,
-    },
-
-    disclaimer: {
-        color: colors.muted,
-        fontSize: 11,
-        lineHeight: 17,
-        textAlign: "center",
-        marginTop: 22,
-    },
-});
