@@ -1,330 +1,324 @@
 import { StyleSheet } from "react-native";
 
-import colors from "../constants/style/colors";
 import spacing from "../constants/style/spacing";
 import radii from "../constants/style/radii";
 import typography from "../constants/style/typography";
 import sizes from "../constants/style/sizes";
+import type lightColors from "../constants/style/colors";
 
-const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        backgroundColor: colors.background,
-    },
+type ThemeColors = typeof lightColors;
 
-    content: {
-        paddingHorizontal: spacing.xxl - 2,
-        paddingTop: spacing.xxxl - 4,
-        paddingBottom: spacing.xxl,
-    },
+const createHomeStyles = (colors: ThemeColors) =>
+    StyleSheet.create({
+        screen: {
+            flex: 1,
+            backgroundColor: colors.background,
+        },
 
-    // Header
-    header: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginBottom: spacing.xl,
-    },
+        content: {
+            paddingHorizontal: spacing.xxl - 2,
+            paddingTop: spacing.xxxl - 4,
+            paddingBottom: spacing.xxl,
+        },
 
-    eyebrow: {
-        color: colors.accent,
-        fontSize: typography.eyebrow,
-        fontWeight: "800",
-        letterSpacing: 1.5,
-    },
+        header: {
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: spacing.xl,
+        },
 
-    title: {
-        color: colors.text,
-        fontSize: typography.title,
-        fontWeight: "800",
-        marginTop: spacing.sm,
-    },
+        eyebrow: {
+            color: colors.accent,
+            fontSize: typography.eyebrow,
+            fontWeight: "800",
+            letterSpacing: 1.5,
+        },
 
-    subtitle: {
-        color: colors.muted,
-        fontSize: typography.body,
-        marginTop: spacing.xs,
-    },
+        title: {
+            color: colors.text,
+            fontSize: typography.title,
+            fontWeight: "800",
+            marginTop: spacing.sm,
+        },
 
-    profileButton: {
-        width: sizes.profileButton,
-        height: sizes.profileButton,
-        borderRadius: radii.round,
-        backgroundColor: colors.surface,
-        borderWidth: 1,
-        borderColor: colors.border,
-        alignItems: "center",
-        justifyContent: "center",
-    },
+        subtitle: {
+            color: colors.muted,
+            fontSize: typography.body,
+            marginTop: spacing.xs,
+        },
 
-    // Journey search card
-    searchCard: {
-        backgroundColor: colors.surface,
-        padding: spacing.lg,
-        borderRadius: radii.xl,
-        borderWidth: 1,
-        borderColor: colors.border,
-        marginBottom: spacing.xxl,
-    },
+        profileButton: {
+            width: sizes.profileButton,
+            height: sizes.profileButton,
+            borderRadius: radii.round,
+            backgroundColor: colors.surface,
+            borderWidth: 1,
+            borderColor: colors.border,
+            alignItems: "center",
+            justifyContent: "center",
+        },
 
-    sectionLabel: {
-        color: colors.accent,
-        fontSize: typography.caption,
-        fontWeight: "800",
-        letterSpacing: 1.1,
-        marginBottom: spacing.sm,
-    },
+        searchCard: {
+            backgroundColor: colors.surface,
+            padding: spacing.lg,
+            borderRadius: radii.xl,
+            borderWidth: 1,
+            borderColor: colors.border,
+            marginBottom: spacing.xxl,
+        },
 
-    autocompleteContainer: {
-        position: "relative",
-        zIndex: 2,
-    },
+        sectionLabel: {
+            color: colors.accent,
+            fontSize: typography.caption,
+            fontWeight: "800",
+            letterSpacing: 1.1,
+            marginBottom: spacing.sm,
+        },
 
-    locationSelector: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: spacing.md,
-        paddingHorizontal: spacing.sm,
-        paddingVertical: spacing.md,
-        minHeight: 66,
-        borderRadius: radii.md,
-        position: "relative",
-        zIndex: 1,
-    },
+        autocompleteContainer: {
+            position: "relative",
+            zIndex: 2,
+        },
 
-    locationSelectorFocused: {
-        backgroundColor: colors.background,
-        zIndex: 1,
-    },
+        locationSelector: {
+            flexDirection: "row",
+            alignItems: "center",
+            gap: spacing.md,
+            paddingHorizontal: spacing.sm,
+            paddingVertical: spacing.md,
+            minHeight: 66,
+            borderRadius: radii.md,
+            position: "relative",
+            zIndex: 1,
+        },
 
-    locationDetails: {
-        flex: 1,
-        minWidth: 0,
-    },
+        locationSelectorFocused: {
+            backgroundColor: colors.background,
+            zIndex: 1,
+        },
 
-    fieldLabel: {
-        color: colors.textSecondary,
-        fontSize: typography.eyebrow,
-        fontWeight: "700",
-        letterSpacing: 1,
-        marginBottom: spacing.xs,
-    },
+        locationDetails: {
+            flex: 1,
+            minWidth: 0,
+        },
 
-    locationInput: {
-        flex: 1,
-        color: colors.text,
-        fontSize: typography.subtitle,
-        fontWeight: "600",
-        padding: 0,
-        minHeight: 26,
-    },
+        fieldLabel: {
+            color: colors.textSecondary,
+            fontSize: typography.eyebrow,
+            fontWeight: "700",
+            letterSpacing: 1,
+            marginBottom: spacing.xs,
+        },
 
-    locationDivider: {
-        height: 1,
-        backgroundColor: colors.border,
-        marginLeft: 42,
-    },
+        locationInput: {
+            flex: 1,
+            color: colors.text,
+            fontSize: typography.subtitle,
+            fontWeight: "600",
+            padding: 0,
+            minHeight: 26,
+        },
 
-    // Autocomplete suggestions
-    suggestionsList: {
-        backgroundColor: colors.surface,
-        borderWidth: 1,
-        borderColor: colors.border,
-        borderRadius: radii.md,
-        marginTop: spacing.xs,
-        marginBottom: spacing.sm,
-        overflow: "hidden",
-    },
+        locationDivider: {
+            height: 1,
+            backgroundColor: colors.border,
+            marginLeft: 42,
+        },
 
-    suggestionRow: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: spacing.md,
-        paddingHorizontal: spacing.md,
-        paddingVertical: spacing.md,
-        borderBottomWidth: 1,
-        borderBottomColor: colors.border,
-    },
+        suggestionsList: {
+            backgroundColor: colors.surface,
+            borderWidth: 1,
+            borderColor: colors.border,
+            borderRadius: radii.md,
+            marginTop: spacing.xs,
+            marginBottom: spacing.sm,
+            overflow: "hidden",
+        },
 
-    suggestionText: {
-        flex: 1,
-    },
+        suggestionRow: {
+            flexDirection: "row",
+            alignItems: "center",
+            gap: spacing.md,
+            paddingHorizontal: spacing.md,
+            paddingVertical: spacing.md,
+            borderBottomWidth: 1,
+            borderBottomColor: colors.border,
+        },
 
-    suggestionTitle: {
-        color: colors.text,
-        fontSize: typography.body,
-        fontWeight: "700",
-    },
+        suggestionText: {
+            flex: 1,
+        },
 
-    suggestionDescription: {
-        color: colors.textSecondary,
-        fontSize: typography.small,
-        marginTop: spacing.xs,
-    },
+        suggestionTitle: {
+            color: colors.text,
+            fontSize: typography.body,
+            fontWeight: "700",
+        },
 
-    noSuggestions: {
-        color: colors.textSecondary,
-        fontSize: typography.small,
-        padding: spacing.md,
-    },
+        suggestionDescription: {
+            color: colors.textSecondary,
+            fontSize: typography.small,
+            marginTop: spacing.xs,
+        },
 
-    // Primary action
-    primaryButton: {
-        backgroundColor: colors.primary,
-        paddingVertical: spacing.md + 3,
-        paddingHorizontal: spacing.lg,
-        borderRadius: radii.md,
-        marginTop: spacing.lg,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: spacing.sm,
-        minHeight: 50,
-    },
+        noSuggestions: {
+            color: colors.textSecondary,
+            fontSize: typography.small,
+            padding: spacing.md,
+        },
 
-    primaryButtonText: {
-        color: colors.surface,
-        fontSize: typography.button,
-        fontWeight: "700",
-    },
+        primaryButton: {
+            backgroundColor: colors.primary,
+            paddingVertical: spacing.md + 3,
+            paddingHorizontal: spacing.lg,
+            borderRadius: radii.md,
+            marginTop: spacing.lg,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: spacing.sm,
+            minHeight: 50,
+        },
 
-    // Quick access
-    sectionHeader: {
-        marginBottom: spacing.md,
-    },
+        primaryButtonText: {
+            color: colors.surface,
+            fontSize: typography.button,
+            fontWeight: "700",
+        },
 
-    sectionTitle: {
-        color: colors.text,
-        fontSize: typography.sectionTitle,
-        fontWeight: "800",
-    },
+        sectionHeader: {
+            marginBottom: spacing.md,
+        },
 
-    tilesRow: {
-        flexDirection: "row",
-        gap: spacing.md,
-    },
+        sectionTitle: {
+            color: colors.text,
+            fontSize: typography.sectionTitle,
+            fontWeight: "800",
+        },
 
-    tile: {
-        flex: 1,
-        minWidth: 0,
-        backgroundColor: colors.surface,
-        borderRadius: radii.lg,
-        padding: spacing.md,
-        borderWidth: 1,
-        borderColor: colors.border,
-    },
+        tilesRow: {
+            flexDirection: "row",
+            gap: spacing.md,
+        },
 
-    tileIcon: {
-        width: sizes.iconMedium,
-        height: sizes.iconMedium,
-        borderRadius: radii.md,
-        backgroundColor: colors.primaryLight,
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: spacing.md,
-    },
+        tile: {
+            flex: 1,
+            minWidth: 0,
+            backgroundColor: colors.surface,
+            borderRadius: radii.lg,
+            padding: spacing.md,
+            borderWidth: 1,
+            borderColor: colors.border,
+        },
 
-    tileTitle: {
-        color: colors.text,
-        fontSize: typography.subtitle,
-        fontWeight: "800",
-    },
+        tileIcon: {
+            width: sizes.iconMedium,
+            height: sizes.iconMedium,
+            borderRadius: radii.md,
+            backgroundColor: colors.primaryLight,
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: spacing.md,
+        },
 
-    tileDescription: {
-        color: colors.muted,
-        fontSize: typography.small,
-        lineHeight: typography.small + 6,
-        marginTop: spacing.xs,
-    },
+        tileTitle: {
+            color: colors.text,
+            fontSize: typography.subtitle,
+            fontWeight: "800",
+        },
 
-    tileFooter: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: spacing.xs,
-        marginTop: spacing.lg,
-    },
+        tileDescription: {
+            color: colors.muted,
+            fontSize: typography.small,
+            lineHeight: typography.small + 6,
+            marginTop: spacing.xs,
+        },
 
-    tileLink: {
-        color: colors.accent,
-        fontSize: typography.caption,
-        fontWeight: "700",
-    },
+        tileFooter: {
+            flexDirection: "row",
+            alignItems: "center",
+            gap: spacing.xs,
+            marginTop: spacing.lg,
+        },
 
-    // Account prompt
-    accountCard: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: spacing.md,
-        backgroundColor: colors.surface,
-        borderRadius: radii.lg,
-        borderWidth: 1,
-        borderColor: colors.border,
-        padding: spacing.md,
-        marginTop: spacing.lg,
-    },
+        tileLink: {
+            color: colors.accent,
+            fontSize: typography.caption,
+            fontWeight: "700",
+        },
 
-    accountIcon: {
-        width: sizes.iconSmall,
-        height: sizes.iconSmall,
-        borderRadius: radii.md,
-        backgroundColor: colors.primaryLight,
-        alignItems: "center",
-        justifyContent: "center",
-    },
+        accountCard: {
+            flexDirection: "row",
+            alignItems: "center",
+            gap: spacing.md,
+            backgroundColor: colors.surface,
+            borderRadius: radii.lg,
+            borderWidth: 1,
+            borderColor: colors.border,
+            padding: spacing.md,
+            marginTop: spacing.lg,
+        },
 
-    accountText: {
-        flex: 1,
-    },
+        accountIcon: {
+            width: sizes.iconSmall,
+            height: sizes.iconSmall,
+            borderRadius: radii.md,
+            backgroundColor: colors.primaryLight,
+            alignItems: "center",
+            justifyContent: "center",
+        },
 
-    accountTitle: {
-        color: colors.text,
-        fontSize: typography.button,
-        fontWeight: "800",
-    },
+        accountText: {
+            flex: 1,
+        },
 
-    accountDescription: {
-        color: colors.muted,
-        fontSize: typography.small,
-        lineHeight: typography.small + 6,
-        marginTop: spacing.xs,
-    },
+        accountTitle: {
+            color: colors.text,
+            fontSize: typography.button,
+            fontWeight: "800",
+        },
 
+        accountDescription: {
+            color: colors.muted,
+            fontSize: typography.small,
+            lineHeight: typography.small + 6,
+            marginTop: spacing.xs,
+        },
 
-    locationFieldsContainer: {
-        position: "relative",
-    },
+        locationFieldsContainer: {
+            position: "relative",
+        },
 
-    swapButtonContainer: {
-        alignItems: "flex-end",
-        height: 0,
-        paddingRight: 12,
-        zIndex: 10,
-        elevation: 10,
-    },
+        swapButtonContainer: {
+            alignItems: "flex-end",
+            height: 0,
+            paddingRight: 12,
+            zIndex: 10,
+            elevation: 10,
+        },
 
-    swapButton: {
-        width: 38,
-        height: 38,
-        marginTop: -19,
-        borderRadius: 19,
-        backgroundColor: colors.surface,
-        borderWidth: 1,
-        borderColor: colors.border,
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 10,
-        elevation: 10,
-    },
+        swapButton: {
+            width: 38,
+            height: 38,
+            marginTop: -19,
+            borderRadius: 19,
+            backgroundColor: colors.surface,
+            borderWidth: 1,
+            borderColor: colors.border,
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 10,
+            elevation: 10,
+        },
 
+        disclaimer: {
+            color: colors.muted,
+            fontSize: typography.caption,
+            lineHeight: typography.caption + 6,
+            textAlign: "center",
+            marginTop: spacing.xl,
+        },
+    });
 
-    // Footer
-    disclaimer: {
-        color: colors.muted,
-        fontSize: typography.caption,
-        lineHeight: typography.caption + 6,
-        textAlign: "center",
-        marginTop: spacing.xl,
-    },
-});
-
-export default styles;
+export default createHomeStyles;

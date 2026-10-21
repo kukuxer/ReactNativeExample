@@ -10,9 +10,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { router, useLocalSearchParams } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import colors from "../constants/style/colors";
+import { useTheme } from "../constants/style/ThemeContext";
 import spacing from "../constants/style/spacing";
-import styles from "@/styles/journey-results.styles";
+import createJourneyResultsStyles from "../styles/journey-results.styles";
 
 import {
     BUS_SERVICES,
@@ -20,6 +20,8 @@ import {
 } from "../constants/transport";
 
 export default function JourneyResultsScreen() {
+    const { colors } = useTheme();
+    const styles = createJourneyResultsStyles(colors);
     const insets = useSafeAreaInsets();
 
     const [expandedService, setExpandedService] = useState<string | null>(

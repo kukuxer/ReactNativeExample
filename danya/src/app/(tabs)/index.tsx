@@ -10,13 +10,15 @@ import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import colors from "../../constants/style/colors";
-import { LOCATIONS } from "../../constants/transport";
-import styles from "../../styles/home.styles";
+import { useTheme } from "@/constants/style/ThemeContext";
+import { LOCATIONS } from "@/constants/transport";
+import createHomeStyles from "../../styles/home.styles";
 
 type LocationField = "origin" | "destination";
 
 export default function HomeScreen() {
+    const { colors } = useTheme();
+    const styles = createHomeStyles(colors)
     const [origin, setOrigin] = useState("");
     const [destination, setDestination] = useState("");
     const [focusedField, setFocusedField] =

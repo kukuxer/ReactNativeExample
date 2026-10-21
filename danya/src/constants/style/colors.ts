@@ -1,4 +1,4 @@
-const colors = {
+const lightColors = {
     background: "#E3ECE4",
     surface: "#FFFFFF",
 
@@ -18,4 +18,24 @@ const colors = {
     success: "#287A4B",
 };
 
-export default colors;
+export const darkColors = {
+    background: "#121814",
+    surface: "#1D2720",
+
+    primary: "#F1F5F1",
+    primaryLight: "#304536",
+
+    text: "#F1F5F1",
+    textSecondary: "#B1C0B4",
+
+    border: "#35443A",
+    muted: "#89978C",
+
+    accent: "#A5D6B0",
+    accentLight: "#345840",
+
+    danger: "#FF7B72",
+    success: "#79D99A",
+};
+
+export default lightColors;
