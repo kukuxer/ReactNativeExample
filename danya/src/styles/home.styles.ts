@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 
-import colors from "../constants/colors";
-import spacing from "../constants/spacing";
-import radii from "../constants/radii";
-import typography from "../constants/typography";
-import sizes from "../constants/sizes";
+import colors from "../constants/style/colors";
+import spacing from "../constants/style/spacing";
+import radii from "../constants/style/radii";
+import typography from "../constants/style/typography";
+import sizes from "../constants/style/sizes";
 
 const styles = StyleSheet.create({
     screen: {
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     content: {
         paddingHorizontal: spacing.xxl - 2,
         paddingTop: spacing.xxxl - 4,
-        paddingBottom: spacing.xxxl,
+        paddingBottom: spacing.xxl,
     },
 
     // Header
@@ -23,27 +23,27 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        marginBottom: spacing.xl + 5,
+        marginBottom: spacing.xl,
     },
 
     eyebrow: {
         color: colors.accent,
         fontSize: typography.eyebrow,
         fontWeight: "800",
-        letterSpacing: 1.8,
+        letterSpacing: 1.5,
     },
 
     title: {
         color: colors.text,
         fontSize: typography.title,
         fontWeight: "800",
-        marginTop: spacing.sm + 1,
+        marginTop: spacing.sm,
     },
 
     subtitle: {
         color: colors.muted,
         fontSize: typography.body,
-        marginTop: spacing.xs + 1,
+        marginTop: spacing.xs,
     },
 
     profileButton: {
@@ -60,11 +60,11 @@ const styles = StyleSheet.create({
     // Journey search card
     searchCard: {
         backgroundColor: colors.surface,
-        padding: spacing.lg + 2,
+        padding: spacing.lg,
         borderRadius: radii.xl,
         borderWidth: 1,
         borderColor: colors.border,
-        marginBottom: spacing.xxxl - 2,
+        marginBottom: spacing.xxl,
     },
 
     sectionLabel: {
@@ -72,32 +72,97 @@ const styles = StyleSheet.create({
         fontSize: typography.caption,
         fontWeight: "800",
         letterSpacing: 1.1,
-        marginBottom: spacing.md + 3,
+        marginBottom: spacing.sm,
     },
 
-    inputRow: {
+    autocompleteContainer: {
+        position: "relative",
+        zIndex: 2,
+    },
+
+    locationSelector: {
         flexDirection: "row",
         alignItems: "center",
         gap: spacing.md,
-        minHeight: sizes.inputRow,
+        paddingHorizontal: spacing.sm,
+        paddingVertical: spacing.md,
+        minHeight: 66,
+        borderRadius: radii.md,
     },
 
-    input: {
+    locationSelectorFocused: {
+        backgroundColor: colors.background,
+    },
+
+    locationDetails: {
         flex: 1,
         minWidth: 0,
-        paddingVertical: spacing.sm + 3,
+    },
+
+    fieldLabel: {
+        color: colors.textSecondary,
+        fontSize: typography.eyebrow,
+        fontWeight: "700",
+        letterSpacing: 1,
+        marginBottom: spacing.xs,
+    },
+
+    locationInput: {
+        flex: 1,
+        color: colors.text,
+        fontSize: typography.subtitle,
+        fontWeight: "600",
+        padding: 0,
+        minHeight: 26,
+    },
+
+    locationDivider: {
+        height: 1,
+        backgroundColor: colors.border,
+        marginLeft: 42,
+    },
+
+    // Autocomplete suggestions
+    suggestionsList: {
+        backgroundColor: colors.surface,
+        borderWidth: 1,
+        borderColor: colors.border,
+        borderRadius: radii.md,
+        marginTop: spacing.xs,
+        marginBottom: spacing.sm,
+        overflow: "hidden",
+    },
+
+    suggestionRow: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: spacing.md,
+        paddingHorizontal: spacing.md,
+        paddingVertical: spacing.md,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+
+    suggestionText: {
+        flex: 1,
+    },
+
+    suggestionTitle: {
         color: colors.text,
         fontSize: typography.body,
+        fontWeight: "700",
     },
 
-    separatorRow: {
-        paddingLeft: spacing.sm - 1,
-        paddingVertical: spacing.xs - 1,
+    suggestionDescription: {
+        color: colors.textSecondary,
+        fontSize: typography.small,
+        marginTop: spacing.xs,
     },
 
-    separator: {
-        height: sizes.separator,
-        backgroundColor: colors.border,
+    noSuggestions: {
+        color: colors.textSecondary,
+        fontSize: typography.small,
+        padding: spacing.md,
     },
 
     // Primary action
@@ -110,7 +175,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        gap: spacing.sm + 1,
+        gap: spacing.sm,
+        minHeight: 50,
     },
 
     primaryButtonText: {
@@ -121,7 +187,7 @@ const styles = StyleSheet.create({
 
     // Quick access
     sectionHeader: {
-        marginBottom: spacing.md + 3,
+        marginBottom: spacing.md,
     },
 
     sectionTitle: {
@@ -139,8 +205,8 @@ const styles = StyleSheet.create({
         flex: 1,
         minWidth: 0,
         backgroundColor: colors.surface,
-        borderRadius: radii.lg + 1,
-        padding: spacing.md + 2,
+        borderRadius: radii.lg,
+        padding: spacing.md,
         borderWidth: 1,
         borderColor: colors.border,
     },
@@ -148,11 +214,11 @@ const styles = StyleSheet.create({
     tileIcon: {
         width: sizes.iconMedium,
         height: sizes.iconMedium,
-        borderRadius: radii.md + 2,
+        borderRadius: radii.md,
         backgroundColor: colors.primaryLight,
         alignItems: "center",
         justifyContent: "center",
-        marginBottom: spacing.md + 3,
+        marginBottom: spacing.md,
     },
 
     tileTitle: {
@@ -165,13 +231,13 @@ const styles = StyleSheet.create({
         color: colors.muted,
         fontSize: typography.small,
         lineHeight: typography.small + 6,
-        marginTop: spacing.xs + 1,
+        marginTop: spacing.xs,
     },
 
     tileFooter: {
         flexDirection: "row",
         alignItems: "center",
-        gap: spacing.xs + 1,
+        gap: spacing.xs,
         marginTop: spacing.lg,
     },
 
@@ -187,17 +253,17 @@ const styles = StyleSheet.create({
         alignItems: "center",
         gap: spacing.md,
         backgroundColor: colors.surface,
-        borderRadius: radii.lg + 1,
+        borderRadius: radii.lg,
         borderWidth: 1,
         borderColor: colors.border,
-        padding: spacing.md + 3,
+        padding: spacing.md,
         marginTop: spacing.lg,
     },
 
     accountIcon: {
         width: sizes.iconSmall,
         height: sizes.iconSmall,
-        borderRadius: radii.md + 2,
+        borderRadius: radii.md,
         backgroundColor: colors.primaryLight,
         alignItems: "center",
         justifyContent: "center",
@@ -219,6 +285,24 @@ const styles = StyleSheet.create({
         lineHeight: typography.small + 6,
         marginTop: spacing.xs,
     },
+    swapButtonContainer: {
+        alignItems: "flex-end",
+        justifyContent: "center",
+        marginVertical: 4,
+        paddingRight: 12,
+        zIndex: 2,
+    },
+
+    swapButton: {
+        width: 38,
+        height: 38,
+        borderRadius: 19,
+        backgroundColor: colors.surface,
+        borderWidth: 1,
+        borderColor: colors.border,
+        alignItems: "center",
+        justifyContent: "center",
+    },
 
     // Footer
     disclaimer: {
@@ -226,7 +310,7 @@ const styles = StyleSheet.create({
         fontSize: typography.caption,
         lineHeight: typography.caption + 6,
         textAlign: "center",
-        marginTop: spacing.xxl - 2,
+        marginTop: spacing.xl,
     },
 });
 
