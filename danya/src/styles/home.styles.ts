@@ -88,10 +88,13 @@ const styles = StyleSheet.create({
         paddingVertical: spacing.md,
         minHeight: 66,
         borderRadius: radii.md,
+        position: "relative",
+        zIndex: 1,
     },
 
     locationSelectorFocused: {
         backgroundColor: colors.background,
+        zIndex: 1,
     },
 
     locationDetails: {
@@ -285,24 +288,34 @@ const styles = StyleSheet.create({
         lineHeight: typography.small + 6,
         marginTop: spacing.xs,
     },
+
+
+    locationFieldsContainer: {
+        position: "relative",
+    },
+
     swapButtonContainer: {
         alignItems: "flex-end",
-        justifyContent: "center",
-        marginVertical: 4,
+        height: 0,
         paddingRight: 12,
-        zIndex: 2,
+        zIndex: 10,
+        elevation: 10,
     },
 
     swapButton: {
         width: 38,
         height: 38,
+        marginTop: -19,
         borderRadius: 19,
         backgroundColor: colors.surface,
         borderWidth: 1,
         borderColor: colors.border,
         alignItems: "center",
         justifyContent: "center",
+        zIndex: 10,
+        elevation: 10,
     },
+
 
     // Footer
     disclaimer: {

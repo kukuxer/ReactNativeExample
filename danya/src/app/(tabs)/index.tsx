@@ -247,15 +247,16 @@ export default function HomeScreen() {
                     PLAN YOUR JOURNEY
                 </Text>
 
+
+                {/* Added: swap button */}
                 {renderLocationField(
                     "origin",
-                    "FROM",
+                    "From",
                     origin,
                     setOrigin,
                     "radio-button-on"
                 )}
 
-                {/* Added: swap button */}
                 <View style={styles.swapButtonContainer}>
                     <Pressable
                         accessibilityRole="button"
@@ -275,9 +276,11 @@ export default function HomeScreen() {
                     </Pressable>
                 </View>
 
+                <View style={styles.locationDivider} />
+
                 {renderLocationField(
                     "destination",
-                    "TO",
+                    "To",
                     destination,
                     setDestination,
                     "location-outline"
